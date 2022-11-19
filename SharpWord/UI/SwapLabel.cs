@@ -27,7 +27,7 @@ namespace SharpWord.UI
         
         private void Paint_SwapLabel(object sender, PaintEventArgs e)
         {
-            // throw new NotImplementedException();
+
             try
             {
                 SharpWord.UI.DoubleBufferedPanel panel = (SharpWord.UI.DoubleBufferedPanel)sender;
