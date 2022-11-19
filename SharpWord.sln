@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1684
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpWord", "SharpWord\SharpWord.csproj", "{02B432F9-4AAB-4A4E-9C17-61E5A40E0FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpWordUnitTest", "SharpWordUnitTest\SharpWordUnitTest.csproj", "{4B435B61-0A77-438F-888E-408F9A9040BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02B432F9-4AAB-4A4E-9C17-61E5A40E0FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B432F9-4AAB-4A4E-9C17-61E5A40E0FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B432F9-4AAB-4A4E-9C17-61E5A40E0FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B432F9-4AAB-4A4E-9C17-61E5A40E0FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B435B61-0A77-438F-888E-408F9A9040BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B435B61-0A77-438F-888E-408F9A9040BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B435B61-0A77-438F-888E-408F9A9040BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B435B61-0A77-438F-888E-408F9A9040BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92C11BBC-ACB3-4ADE-AB8D-EF6F187446B9}
+	EndGlobalSection
+EndGlobal
