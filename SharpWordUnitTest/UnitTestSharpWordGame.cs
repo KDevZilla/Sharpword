@@ -52,15 +52,7 @@ namespace SharpWordUnitTest
                 pgame.EnterChar("del");
             }
         }
-        /*
-        private string WordFilePath
-        {
-            get
-            {
-                return @"D:\CODE\visual studio 2010\Projects\SharpWord\SharpWord\SharpWord\bin\Debug\word.txt";
-            }
-        }
-        */
+
 
         [TestMethod]
         public void TestIncorrectAnswer()

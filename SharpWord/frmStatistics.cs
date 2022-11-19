@@ -55,6 +55,10 @@ namespace SharpWord
             lstLableDis.Add(this.lblGuessDis5);
             lstLableDis.Add(this.lblGuessDis6);
             int i;
+            if(MaxValue == 0)
+            {
+                MaxValue = 100;
+            }
             int WidthPerScore = (MaxWidth - MinWIdth) / MaxValue ;
             for(i=0;i<lstLableDis.Count;i++)
             {
