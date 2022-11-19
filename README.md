@@ -4,6 +4,9 @@
 ![Game Animation](https://raw.githubusercontent.com/KDevZilla/Resource/main/SharpWord01.gif)
 
 
+
+You can look for a project article https://github.com/KDevZilla/ArticlesPublic/blob/main/Sharpword.md
+
 # How to setup a project
 1. Just download a project, it is just a small program written in C# Windows Form.
 2. There are 2 projects
