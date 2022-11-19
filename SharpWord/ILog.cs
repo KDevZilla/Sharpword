@@ -31,16 +31,22 @@ namespace SharpWord
         }
         public void Log(String Message)
         {
-            //Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath
-            if(!System.IO.File.Exists (filePath ))
+            try
             {
-                System.IO.File.Create(filePath);
-            }
+                if (!System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Create(filePath);
+                }
 
-            using (StreamWriter writer = new StreamWriter(filePath,true ))
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    Message = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ssss:") + Message;
+                    writer.WriteLine(Message);
+                }
+            }
+            catch (Exception ex)
             {
-                Message = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ssss:") + Message;
-                writer.WriteLine(Message);
+                //Sorry we really cannot do anything
             }
         }
     }
