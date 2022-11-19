@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Transitions, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Transitions.dll</HintPath>
+      <HintPath>dll\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
