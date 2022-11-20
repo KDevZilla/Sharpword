@@ -81,11 +81,12 @@ namespace SharpWord.Game
 
             for (i = 0; i < lstAlphabet.Count; i++)
             {
-                
+                /*
                 if(lstHasCheckedAlpha[i])
                 {
                     continue;
                 }
+                */
 
                 int j;
                 for (j = 0; j < lstAlphabet.Count; j++)
@@ -98,6 +99,7 @@ namespace SharpWord.Game
 
                     if (lstAlphabet[i].Character == AlphaAnswer.Character)
                     {
+
                         lstHasCheckedAlpha[j] = true;
                         lstAlphabet[i].Result = AlphaResult.WrongSpot;
                     }

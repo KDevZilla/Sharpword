@@ -65,7 +65,7 @@ namespace SharpWordUnitTest
             game.SetWordAnswerForTestingPurpose(@"BONUS");
 
             int iCurrentIndex = game.CurrentWordIndex;
-            Trace.Assert(iCurrentIndex == 0);
+            Assert.IsTrue(iCurrentIndex == 0);
 
             System.Collections.Generic.List<Alphabet> lstAlpha = null;
             AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
@@ -77,40 +77,40 @@ namespace SharpWordUnitTest
             Result = game.LatestResult;
             GameState = game.GameState;
              
-            Trace.Assert(iCurrentIndex == 1);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 1);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             Answer(game, "DANCE");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             
             Answer(game, "ABCDE");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.NotIntheWordList);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.NotIntheWordList);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             ClearInput(game);
-            Trace.Assert(game.CurrentGuessWord.GetWordAsString().Trim() == "");
+            Assert.IsTrue(game.CurrentGuessWord.GetWordAsString().Trim() == "");
 
             
             Answer(game, "AAAAA");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.NotIntheWordList);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.NotIntheWordList);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
             ClearInput(game);
-            Trace.Assert(game.CurrentGuessWord.GetWordAsString().Trim() == "");
+            Assert.IsTrue(game.CurrentGuessWord.GetWordAsString().Trim() == "");
 
             Answer(game, "INVALIDLENGTH");
             iCurrentIndex = game.CurrentWordIndex;
@@ -118,55 +118,55 @@ namespace SharpWordUnitTest
             GameState = game.GameState;
             lstAlpha = game.CurrentGuessWord.lstAlphabet;
            
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.NotIntheWordList);
-            Trace.Assert(GameState == GameStateEnum.Playing);
-            Trace.Assert(lstAlpha.Count == 5);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.NotIntheWordList);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(lstAlpha.Count == 5);
 
             ClearInput(game);
             lstAlpha = game.CurrentGuessWord.lstAlphabet;
-            Trace.Assert(lstAlpha.Count == 0);
-            Trace.Assert(game.CurrentGuessWord.GetWordAsString().Trim() == "");
+            Assert.IsTrue(lstAlpha.Count == 0);
+            Assert.IsTrue(game.CurrentGuessWord.GetWordAsString().Trim() == "");
 
             ClearInput(game);
             ClearInput(game);
             ClearInput(game);
             lstAlpha = game.CurrentGuessWord.lstAlphabet;
-            Trace.Assert(lstAlpha.Count == 0);
+            Assert.IsTrue(lstAlpha.Count == 0);
 
          
             Answer(game, "BEGAN");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 3);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect );
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 3);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect );
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             Answer(game, "PHASE");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 4);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 4);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             Answer(game, "SUPER");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 5);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 5);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
 
             Answer(game, "HOBBY");
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 5);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Finished);
+            Assert.IsTrue(iCurrentIndex == 5);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Finished);
         }
 
 
@@ -181,7 +181,7 @@ namespace SharpWordUnitTest
             game.SetWordAnswerForTestingPurpose(@"BONUS");
 
             int iCurrentIndex = game.CurrentWordIndex;
-            Trace.Assert(iCurrentIndex == 0);
+            Assert.IsTrue(iCurrentIndex == 0);
 
 
             AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
@@ -192,9 +192,9 @@ namespace SharpWordUnitTest
             iCurrentIndex = game.CurrentWordIndex;
             Result = game.LatestResult;
             GameState = game.GameState;
-            Trace.Assert(iCurrentIndex == 0);
-            Trace.Assert(Result == AnswerResultEnum.Correct);
-            Trace.Assert(GameState == GameStateEnum.Finished);
+            Assert.IsTrue(iCurrentIndex == 0);
+            Assert.IsTrue(Result == AnswerResultEnum.Correct);
+            Assert.IsTrue(GameState == GameStateEnum.Finished);
 
             
         }
@@ -210,7 +210,7 @@ namespace SharpWordUnitTest
             game.SetWordAnswerForTestingPurpose(@"BONUS");
 
             int iCurrentIndex = game.CurrentWordIndex;
-            Trace.Assert(iCurrentIndex == 0);
+            Assert.IsTrue(iCurrentIndex == 0);
 
 
             AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
@@ -223,24 +223,24 @@ namespace SharpWordUnitTest
             GameState = game.GameState;
             System.Collections.Generic.List<Alphabet> lstAlpha = game.PreviousGuessWord.lstAlphabet;
             Dictionary<char, AlphaResult> DicTrieChar = game.DicTriecChar;
-            
 
-            Trace.Assert(lstAlpha[0].Result == AlphaResult.NotinTheWord);
-            Trace.Assert(lstAlpha[1].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[2].Result == AlphaResult.NotinTheWord );
-            Trace.Assert(lstAlpha[3].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[4].Result == AlphaResult.CorrectSpot);
 
-            Trace.Assert(DicTrieChar.Count == 5);
-            Trace.Assert(DicTrieChar['F'] == AlphaResult.NotinTheWord);
-            Trace.Assert(DicTrieChar['O'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['C'] == AlphaResult.NotinTheWord);
-            Trace.Assert(DicTrieChar['U'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['S'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.NotinTheWord );
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.CorrectSpot);
 
-            Trace.Assert(iCurrentIndex == 1);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(DicTrieChar.Count == 5);
+            Assert.IsTrue(DicTrieChar['F'] == AlphaResult.NotinTheWord);
+            Assert.IsTrue(DicTrieChar['O'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['C'] == AlphaResult.NotinTheWord);
+            Assert.IsTrue(DicTrieChar['U'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['S'] == AlphaResult.CorrectSpot);
+
+            Assert.IsTrue(iCurrentIndex == 1);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
 
 
@@ -251,26 +251,26 @@ namespace SharpWordUnitTest
             GameState = game.GameState;
             lstAlpha = game.PreviousGuessWord.lstAlphabet;
 
-            Trace.Assert(lstAlpha[0].Result == AlphaResult.CorrectSpot );
-            Trace.Assert(lstAlpha[1].Result == AlphaResult.WrongSpot );
-            Trace.Assert(lstAlpha[2].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[3].Result == AlphaResult.NotinTheWord  );
-            Trace.Assert(lstAlpha[4].Result == AlphaResult.NotinTheWord );
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.CorrectSpot );
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.WrongSpot );
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.NotinTheWord  );
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.NotinTheWord );
 
             /*
             DicTrieChar = game.DicTriecChar;
-            Trace.Assert(DicTrieChar.Count == 8);
-            Trace.Assert(DicTrieChar['B'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['N'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['O'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['U'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['S'] == AlphaResult.CorrectSpot);
-            Trace.Assert(DicTrieChar['Y'] == AlphaResult.NotinTheWord );
+            Assert.IsTrue(DicTrieChar.Count == 8);
+            Assert.IsTrue(DicTrieChar['B'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['N'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['O'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['U'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['S'] == AlphaResult.CorrectSpot);
+            Assert.IsTrue(DicTrieChar['Y'] == AlphaResult.NotinTheWord );
             */
 
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
-            Trace.Assert(GameState == GameStateEnum.Playing);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.InTheWordListButNotCorrect);
+            Assert.IsTrue(GameState == GameStateEnum.Playing);
 
             Answer(game, "BONUS");
             iCurrentIndex = game.CurrentWordIndex;
@@ -278,14 +278,14 @@ namespace SharpWordUnitTest
             GameState = game.GameState;
             lstAlpha = game.CurrentGuessWord.lstAlphabet;
             DicTrieChar = game.DicTriecChar;
-            Trace.Assert(lstAlpha[0].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[1].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[2].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[3].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[4].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(iCurrentIndex == 2);
-            Trace.Assert(Result == AnswerResultEnum.Correct);
-            Trace.Assert(GameState == GameStateEnum.Finished);
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(iCurrentIndex == 2);
+            Assert.IsTrue(Result == AnswerResultEnum.Correct);
+            Assert.IsTrue(GameState == GameStateEnum.Finished);
 
         }
 
@@ -302,7 +302,7 @@ namespace SharpWordUnitTest
             game.SetWordAnswerForTestingPurpose(@"AMPLY");
 
             int iCurrentIndex = game.CurrentWordIndex;
-            Trace.Assert(iCurrentIndex == 0);
+            Assert.IsTrue(iCurrentIndex == 0);
 
 
             AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
@@ -319,14 +319,51 @@ namespace SharpWordUnitTest
 
             Assert.IsTrue(lstAlpha[0].Result == AlphaResult.CorrectSpot);
             Assert.IsTrue(lstAlpha[1].Result == AlphaResult.NotinTheWord);
-            // Trace.Assert(lstAlpha[1].Result == AlphaResult.WrongSpot );
+            // Assert.IsTrue(lstAlpha[1].Result == AlphaResult.WrongSpot );
             Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot);
             Assert.IsTrue(lstAlpha[3].Result == AlphaResult.CorrectSpot );
             Assert.IsTrue(lstAlpha[4].Result == AlphaResult.NotinTheWord );
            
           
 
-//            Trace.Assert(GameState == GameStateEnum.Finished);
+//            Assert.IsTrue(GameState == GameStateEnum.Finished);
+
+        }
+
+
+        [TestMethod]
+        public void TestAnswer04()
+        {
+            String filePath = WordFilePath;
+            ISharpWordUI UI = new SharpWord.UI.MockUI();
+
+
+            SharpWord.Game.SharpWordGame game = new SharpWord.Game.SharpWordGame(UI, filePath);
+            game.SetWordAnswerForTestingPurpose(@"RHYME");
+
+            int iCurrentIndex = game.CurrentWordIndex;
+            Assert.IsTrue(iCurrentIndex == 0);
+
+
+            AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
+            SharpWordGame.GameStateEnum GameState = GameStateEnum.Playing;
+
+            Answer(game, "DREAM");
+
+            iCurrentIndex = game.CurrentWordIndex;
+            Result = game.LatestResult;
+            GameState = game.GameState;
+            System.Collections.Generic.List<Alphabet> lstAlpha = game.PreviousGuessWord.lstAlphabet;
+            Dictionary<char, AlphaResult> DicTrieChar = game.DicTriecChar;
+
+
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.NotinTheWord );
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.WrongSpot );
+           
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.WrongSpot );
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.NotinTheWord );
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.WrongSpot );
+
 
         }
     }

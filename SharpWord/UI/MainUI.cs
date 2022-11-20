@@ -265,7 +265,9 @@ namespace SharpWord.UI
             _game.logObj = textLog;
             _game.HasFinishedUpdateStatistic += game_HasFinishedUpdateStatistic;
             _game.statistic = this.CurrentStatistics;
-           // _game.SetWordAnswerForTestingPurpose("AMPLY");
+            // _game.SetWordAnswerForTestingPurpose("AMPLY");
+           
+
             mainForm = f;
 
             if (System.Diagnostics.Debugger.IsAttached)
