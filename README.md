@@ -25,7 +25,7 @@ copy or configure anything, jut run the program
 4. For testing the project, you can just run The test cases in UnitTestSharpWordGame.class
 
 
-# Bug fiexed
+# Bug fixed
 
 1. 2022-11-20 The incorrect color in case there are more than one character user guess while there is only one correct character.  
 In this below case the color of the fist P must be gray not yellow.  
