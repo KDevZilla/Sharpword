@@ -5,7 +5,12 @@
 
 
 
-You can look for a project article https://github.com/KDevZilla/ArticlesPublic/blob/main/Sharpword.md
+You can look for a project article I post it 2 places.
+The gif image on codeproject might does not do animation.
+
+https://www.codeproject.com/Articles/5347429/Sharpword  
+https://github.com/KDevZilla/ArticlesPublic/blob/main/Sharpword.md
+
 
 # How to setup a project
 1. Just download a project, it is just a small program written in C# Windows Form.
