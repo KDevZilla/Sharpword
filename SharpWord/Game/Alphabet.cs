@@ -64,23 +64,50 @@ namespace SharpWord.Game
             {
                 IsCorrect = false;
             }
+            // Set CorrectSpot
+            List<Boolean> lstHasCheckedAlpha = new List<bool>();
+          
             for (i = 0; i < lstAlphabet.Count ; i++)
             {
                 Alphabet AlphaAnswer = AnswerWord.lstAlphabet[i];
                 lstAlphabet[i].Result = AlphaResult.NotinTheWord;
-
+                lstHasCheckedAlpha.Add(false);
                 if(lstAlphabet [i].Character == AlphaAnswer.Character  )
                 {
                     lstAlphabet[i].Result = AlphaResult.CorrectSpot;
-                } else
+                    lstHasCheckedAlpha[i] = true;
+                }
+            }
+
+            for (i = 0; i < lstAlphabet.Count; i++)
+            {
+                
+                if(lstHasCheckedAlpha[i])
                 {
-                    if(AnswerWord.IsItContainChar (lstAlphabet [i].Character ))
+                    continue;
+                }
+
+                int j;
+                for (j = 0; j < lstAlphabet.Count; j++)
+                {
+                    if (i == j ||
+                        lstHasCheckedAlpha[j]) {
+                        continue;
+                    }
+                    Alphabet AlphaAnswer = AnswerWord.lstAlphabet[j];
+
+                    if (lstAlphabet[i].Character == AlphaAnswer.Character)
                     {
+                        lstHasCheckedAlpha[j] = true;
                         lstAlphabet[i].Result = AlphaResult.WrongSpot;
                     }
                 }
-                if(lstAlphabet [i].Result == AlphaResult.NotinTheWord ||
-                    lstAlphabet [i].Result == AlphaResult.WrongSpot )
+            }
+
+            for (i = 0; i < lstAlphabet.Count; i++)
+            {
+                if (lstAlphabet[i].Result == AlphaResult.NotinTheWord ||
+                    lstAlphabet[i].Result == AlphaResult.WrongSpot)
                 {
                     IsCorrect = false;
                 }
@@ -88,6 +115,8 @@ namespace SharpWord.Game
             return IsCorrect;
 
         }
+
+        
         public void Parse(String PWord)
         {
             int i;

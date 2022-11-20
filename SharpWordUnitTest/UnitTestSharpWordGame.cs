@@ -250,13 +250,15 @@ namespace SharpWordUnitTest
             Result = game.LatestResult;
             GameState = game.GameState;
             lstAlpha = game.PreviousGuessWord.lstAlphabet;
-            DicTrieChar = game.DicTriecChar;
+
             Trace.Assert(lstAlpha[0].Result == AlphaResult.CorrectSpot );
             Trace.Assert(lstAlpha[1].Result == AlphaResult.WrongSpot );
             Trace.Assert(lstAlpha[2].Result == AlphaResult.CorrectSpot);
-            Trace.Assert(lstAlpha[3].Result == AlphaResult.WrongSpot );
+            Trace.Assert(lstAlpha[3].Result == AlphaResult.NotinTheWord  );
             Trace.Assert(lstAlpha[4].Result == AlphaResult.NotinTheWord );
 
+            /*
+            DicTrieChar = game.DicTriecChar;
             Trace.Assert(DicTrieChar.Count == 8);
             Trace.Assert(DicTrieChar['B'] == AlphaResult.CorrectSpot);
             Trace.Assert(DicTrieChar['N'] == AlphaResult.CorrectSpot);
@@ -264,6 +266,7 @@ namespace SharpWordUnitTest
             Trace.Assert(DicTrieChar['U'] == AlphaResult.CorrectSpot);
             Trace.Assert(DicTrieChar['S'] == AlphaResult.CorrectSpot);
             Trace.Assert(DicTrieChar['Y'] == AlphaResult.NotinTheWord );
+            */
 
             Trace.Assert(iCurrentIndex == 2);
             Trace.Assert(Result == AnswerResultEnum.InTheWordListButNotCorrect);
@@ -283,6 +286,47 @@ namespace SharpWordUnitTest
             Trace.Assert(iCurrentIndex == 2);
             Trace.Assert(Result == AnswerResultEnum.Correct);
             Trace.Assert(GameState == GameStateEnum.Finished);
+
+        }
+
+
+
+        [TestMethod]
+        public void TestAnswer03()
+        {
+            String filePath = WordFilePath;
+            ISharpWordUI UI = new SharpWord.UI.MockUI();
+
+
+            SharpWord.Game.SharpWordGame game = new SharpWord.Game.SharpWordGame(UI, filePath);
+            game.SetWordAnswerForTestingPurpose(@"AMPLY");
+
+            int iCurrentIndex = game.CurrentWordIndex;
+            Trace.Assert(iCurrentIndex == 0);
+
+
+            AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
+            SharpWordGame.GameStateEnum GameState = GameStateEnum.Playing;
+
+            Answer(game, "APPLE");
+
+            iCurrentIndex = game.CurrentWordIndex;
+            Result = game.LatestResult;
+            GameState = game.GameState;
+            System.Collections.Generic.List<Alphabet> lstAlpha = game.PreviousGuessWord.lstAlphabet;
+            Dictionary<char, AlphaResult> DicTrieChar = game.DicTriecChar;
+
+
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.NotinTheWord);
+            // Trace.Assert(lstAlpha[1].Result == AlphaResult.WrongSpot );
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.CorrectSpot );
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.NotinTheWord );
+           
+          
+
+//            Trace.Assert(GameState == GameStateEnum.Finished);
 
         }
     }
