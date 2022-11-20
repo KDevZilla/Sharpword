@@ -1,12 +1,14 @@
 # Sharpword
  Wordle using C#  
  
-![Game Animation](https://raw.githubusercontent.com/KDevZilla/Resource/main/SharpWord01.gif)
 
 
+![Game Animation](https://user-images.githubusercontent.com/108615376/202889375-d00a5528-a166-4252-ba0f-22f3a0217425.gif)
 
-You can look for a project article I post it 2 places.
-The gif image on codeproject might does not do animation.
+
+You can look for a project article I post it on 2 places.
+The contents are the same. 
+I post it on github because the gif image on codeproject might does not do animation.
 
 https://www.codeproject.com/Articles/5347429/Sharpword  
 https://github.com/KDevZilla/ArticlesPublic/blob/main/Sharpword.md
