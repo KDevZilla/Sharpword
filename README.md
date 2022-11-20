@@ -26,7 +26,8 @@ copy or configure anything, jut run the program
 
 
 # Bug fiexed
-2022-11-20 The incorrect color in case there are more than one character user guess while there is only one correct character.  
+
+1. 2022-11-20 The incorrect color in case there are more than one character user guess while there is only one correct character.  
 In this below case the color of the fist P must be gray not yellow.  
 Thank to https://www.reddit.com/user/elvishfiend/ to point out
 
@@ -35,3 +36,12 @@ Before fix
 
 After fixed  
 ![SharpWord_Fixed_TileResult](https://user-images.githubusercontent.com/108615376/202889174-c8398eb9-5470-48de-93a9-10a7f3b67ad7.png)
+
+
+2. 2022-11-20 The incorrect color also   
+Thank to https://www.reddit.com/user/m4trixglitch/   
+Before fix  
+![SharpWord_Incorrect_TileResult_02](https://user-images.githubusercontent.com/108615376/202912138-c1e21c15-d372-4692-801b-c6f0fa0c207a.png)
+
+After fixed  
+![SharpWord_Fixed_TileResult_02](https://user-images.githubusercontent.com/108615376/202912157-4521ff80-6754-496c-ab33-e03172f6a15b.png)
