@@ -366,5 +366,62 @@ namespace SharpWordUnitTest
 
 
         }
+
+
+        [TestMethod]
+        public void TestAnswer05()
+        {
+            String filePath = WordFilePath;
+            ISharpWordUI UI = new SharpWord.UI.MockUI();
+
+
+            SharpWord.Game.SharpWordGame game = new SharpWord.Game.SharpWordGame(UI, filePath);
+            game.SetWordAnswerForTestingPurpose(@"AMPLY");
+
+            int iCurrentIndex = game.CurrentWordIndex;
+            Assert.IsTrue(iCurrentIndex == 0);
+
+            AnswerResultEnum Result = AnswerResultEnum.InTheWordListButNotCorrect;
+            SharpWordGame.GameStateEnum GameState = GameStateEnum.Playing;
+            Answer(game, "POINT");
+            iCurrentIndex = game.CurrentWordIndex;
+            Result = game.LatestResult;
+            GameState = game.GameState;
+            System.Collections.Generic.List<Alphabet> lstAlpha = game.PreviousGuessWord.lstAlphabet;
+           
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.WrongSpot);
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.NotinTheWord );
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue (game.GameState == GameStateEnum.Playing);
+
+            Answer(game, "APPLY");
+            lstAlpha = game.PreviousGuessWord.lstAlphabet;
+
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.CorrectSpot );
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot );
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.CorrectSpot );
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(game.GameState == GameStateEnum.Playing);
+
+            Answer(game, "PUPPY");
+            lstAlpha = game.PreviousGuessWord.lstAlphabet;
+
+            Assert.IsTrue(lstAlpha[0].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[1].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[2].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(lstAlpha[3].Result == AlphaResult.NotinTheWord);
+            Assert.IsTrue(lstAlpha[4].Result == AlphaResult.CorrectSpot);
+            Assert.IsTrue(game.GameState == GameStateEnum.Playing);
+
+            Answer(game, "AMPLY");
+            lstAlpha = game.PreviousGuessWord.lstAlphabet;
+            Assert.IsTrue(game.GameState == GameStateEnum.Finished);
+
+
+
+        }
     }
 }

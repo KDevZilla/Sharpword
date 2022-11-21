@@ -81,12 +81,6 @@ namespace SharpWord.Game
 
             for (i = 0; i < lstAlphabet.Count; i++)
             {
-                /*
-                if(lstHasCheckedAlpha[i])
-                {
-                    continue;
-                }
-                */
 
                 int j;
                 for (j = 0; j < lstAlphabet.Count; j++)
