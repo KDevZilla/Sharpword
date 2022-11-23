@@ -7,8 +7,7 @@
 
 
 You can look for a project article I post it on 2 places.
-The contents are the same. 
-I post it on github because the gif image on codeproject might does not do animation.
+The contents are the same.
 
 https://www.codeproject.com/Articles/5347429/Sharpword  
 https://github.com/KDevZilla/ArticlesPublic/blob/main/Sharpword.md
