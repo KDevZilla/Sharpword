@@ -63,7 +63,12 @@ namespace SharpWord
        // public MainUI mainUI = null;
         private void frmGame_Load(object sender, EventArgs e)
         {
-           // mainUI.AddMainForm(this);
+            /*Attribute required for using the icon
+             * https://www.flaticon.com/free-icon/letter-w_7786224
+             */
+            this.Icon = Resource1.letter_w;
+
+            // mainUI.AddMainForm(this);
             mainUI.NewGame(this);
           
 

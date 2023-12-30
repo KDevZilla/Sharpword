@@ -19,7 +19,7 @@ namespace SharpWord
        // public MainUI mainUI = null;
         private void frmSettings_Load(object sender, EventArgs e)
         {
-
+            this.Icon = Resource1.letter_w;
             this.toggleDarkTheme.Checked = this.mainUI.CurrentSettings.IsUsingDarkTheme;
             this.toggleSmallSizeBoard.Checked = this.mainUI.CurrentSettings.IsUsingSmallScreen;
             RenderTheme();

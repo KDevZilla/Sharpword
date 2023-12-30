@@ -19,6 +19,7 @@ namespace SharpWord
 
         private void frmShowProblemWIthRoundLabel_Load(object sender, EventArgs e)
         {
+            this.Icon = Resource1.letter_w;
             this.roundLabel1._BackColor = Color.Aquamarine;
             this.roundLabel2._BackColor = Color.Aquamarine;
 

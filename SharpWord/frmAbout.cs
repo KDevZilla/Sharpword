@@ -22,6 +22,7 @@ namespace SharpWord
         //public MainUI mainUI = null;
         private void frmAbout_Load(object sender, EventArgs e)
         {
+            this.Icon = Resource1.letter_w;
             this.RenderTheme();
 
             if (mainUI.CurrentSettings.IsUsingSmallScreen )

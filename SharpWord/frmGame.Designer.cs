@@ -67,33 +67,33 @@
             // newToolStripMenuNew
             // 
             this.newToolStripMenuNew.Name = "newToolStripMenuNew";
-            this.newToolStripMenuNew.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuNew.Size = new System.Drawing.Size(125, 22);
             this.newToolStripMenuNew.Text = "New";
             this.newToolStripMenuNew.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripMenuStatistics
             // 
             this.toolStripMenuStatistics.Name = "toolStripMenuStatistics";
-            this.toolStripMenuStatistics.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuStatistics.Size = new System.Drawing.Size(125, 22);
             this.toolStripMenuStatistics.Text = "Stastistics";
             this.toolStripMenuStatistics.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuSettings
             // 
             this.toolStripMenuSettings.Name = "toolStripMenuSettings";
-            this.toolStripMenuSettings.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuSettings.Size = new System.Drawing.Size(125, 22);
             this.toolStripMenuSettings.Text = "Settings";
             this.toolStripMenuSettings.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
             // 
             // ToolStripMenuExit
             // 
             this.ToolStripMenuExit.Name = "ToolStripMenuExit";
-            this.ToolStripMenuExit.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuExit.Size = new System.Drawing.Size(125, 22);
             this.ToolStripMenuExit.Text = "Exit";
             this.ToolStripMenuExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -126,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

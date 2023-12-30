@@ -55,6 +55,7 @@ namespace SharpWord
 
         private void frmMessageBox_Load(object sender, EventArgs e)
         {
+            this.Icon = Resource1.letter_w;
             RenderTheme();
             mainUI.AdjustChildFromTosmallSizeIfNessecially(this);
         }

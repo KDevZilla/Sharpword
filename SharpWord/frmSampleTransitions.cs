@@ -69,6 +69,10 @@ namespace SharpWord
                 this.Text = "Time takes (seconds) " + timeMeasure.TimeTakes.TotalSeconds;
             }
         }
-        
+
+        private void frmSampleTransitions_Load(object sender, EventArgs e)
+        {
+            this.Icon = Resource1.letter_w;
+        }
     }
 }

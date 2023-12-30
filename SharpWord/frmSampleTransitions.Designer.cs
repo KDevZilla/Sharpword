@@ -104,6 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "frmSampleTransitions";
             this.Text = "SampleTransitions";
+            this.Load += new System.EventHandler(this.frmSampleTransitions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

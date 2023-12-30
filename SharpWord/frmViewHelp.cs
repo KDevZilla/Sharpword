@@ -24,6 +24,7 @@ namespace SharpWord
 
         private void frmViewHelp_Load(object sender, EventArgs e)
         {
+            this.Icon = Resource1.letter_w;
             this.RenderTheme();
 
              mainUI.AdjustChildFromTosmallSizeIfNessecially(this);
