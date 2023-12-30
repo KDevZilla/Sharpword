@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static SharpWord.MainUI;
 using SharpWord.UI;
 
 namespace SharpWord
@@ -68,7 +67,7 @@ namespace SharpWord
              */
             this.Icon = Resource1.letter_w;
 
-            // mainUI.AddMainForm(this);
+
             mainUI.NewGame(this);
           
 
@@ -78,13 +77,13 @@ namespace SharpWord
         private MainUI mUI = null;
         public void SetMainUI(MainUI mainUI)
         {
-            //throw new NotImplementedException();
+
             mUI = mainUI;
         }
 
         public MainUI GetMainUI()
         {
-            // throw new NotImplementedException();
+
             return mUI;
         }
 
